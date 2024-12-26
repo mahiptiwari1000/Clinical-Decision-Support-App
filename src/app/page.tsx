@@ -2,16 +2,15 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Use `next/navigation` for App Router navigation
-import Link from "next/link";
 
 export default function Home() {
-  const [symptoms, setSymptoms] = useState(""); // State to store user input
+  // const [symptoms, setSymptoms] = useState(""); // State to store user input
   const [textareaValue, setTextareaValue] = useState(""); // Temporary state for textarea value
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission
-    setSymptoms(textareaValue); // Update the `symptoms` state
+    // setSymptoms(textareaValue); // Update the `symptoms` state
     router.push(`/results?symptoms=${encodeURIComponent(textareaValue)}`); // Redirect to results page with query parameters
   };
 
